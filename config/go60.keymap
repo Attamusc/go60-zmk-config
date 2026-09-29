@@ -31,14 +31,14 @@
 #define _1PASS &kp LG(LS(SPACE))
 
 /* Go60 physical positions used by combos. */
-#define GO60_L_C3R2 15
-#define GO60_L_C2R2 16
-#define GO60_L_C4R3 26
 #define GO60_L_C3R3 27
 #define GO60_L_C2R3 28
-#define GO60_R_C2R3 31
-#define GO60_R_C3R3 32
-#define GO60_R_C4R3 33
+#define GO60_L_C4R4 38
+#define GO60_L_C3R4 39
+#define GO60_L_C2R4 40
+#define GO60_R_C2R4 43
+#define GO60_R_C3R4 44
+#define GO60_R_C4R4 45
 #define GO60_R_T3 57
 #define GO60_R_T2 58
 
@@ -94,31 +94,31 @@
 
         combo_esc {
             timeout-ms = <50>;
-            key-positions = <GO60_L_C3R2 GO60_L_C2R2>;
+            key-positions = <GO60_L_C3R3 GO60_L_C2R3>;
             bindings = <&kp ESC>;
         };
 
         combo_hypr_l {
             timeout-ms = <50>;
-            key-positions = <GO60_L_C4R3 GO60_L_C3R3>;
+            key-positions = <GO60_L_C4R4 GO60_L_C3R4>;
             bindings = <&kp LG(LC(LS(LALT)))>;
         };
 
         combo_meh_l {
             timeout-ms = <50>;
-            key-positions = <GO60_L_C3R3 GO60_L_C2R3>;
+            key-positions = <GO60_L_C3R4 GO60_L_C2R4>;
             bindings = <&kp LC(LS(LALT))>;
         };
 
         combo_meh_r {
             timeout-ms = <50>;
-            key-positions = <GO60_R_C2R3 GO60_R_C3R3>;
+            key-positions = <GO60_R_C2R4 GO60_R_C3R4>;
             bindings = <&kp LC(LS(LALT))>;
         };
 
         combo_hypr_r {
             timeout-ms = <50>;
-            key-positions = <GO60_R_C3R3 GO60_R_C4R3>;
+            key-positions = <GO60_R_C3R4 GO60_R_C4R4>;
             bindings = <&kp LG(LC(LS(LALT)))>;
         };
     };
@@ -129,10 +129,10 @@
         base {
             display-name = "BASE";
             bindings = <
+                &none  &none  &none  &none  &none  &none    &none  &none  &none  &none  &none  &none
                 &none  &kp Q  &kp W  &kp E  &kp R  &kp T    &kp Y  &kp U  &kp I  &kp O  &kp P  &none
                 &none  &kp A  &kp S  &lt NAV D  &lt SYM_RIGHT F  &kp G    &kp H  &lt SYM_LEFT J  &lt NUM K  &kp L  &kp BSPC  &none
                 &none  &kp Z  &kp X  &kp C  &kp V  &kp B    &kp N  &kp M  &kp COMMA  &kp DOT  &kp ENTER  &none
-                &none  &none  &none  &none  &none  &none    &none  &none  &none  &none  &none  &none
                 &none  &none  &none    &none  &none  &none
                 &none  &mt LGUI F12  &kp LSHIFT    &lt UTIL SPACE  &mt LCTL TAB  &none
             >;
@@ -141,10 +141,10 @@
         nav {
             display-name = "NAV";
             bindings = <
+                &none  &none  &none  &none  &none  &none    &none  &none  &none  &none  &none  &none
                 &none  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &kp PG_UP  &trans  &trans  &none
                 &none  &kp DEL  &kp BSPC  &none  &kp LA(LGUI)  &trans    &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &trans  &none
                 &none  &trans  &trans  &trans  &trans  &trans    &trans  &kp HOME  &kp PG_DN  &kp END  &trans  &none
-                &none  &none  &none  &none  &none  &none    &none  &none  &none  &none  &none  &none
                 &none  &none  &none    &none  &none  &none
                 &none  &trans  &trans    &trans  &trans  &none
             >;
@@ -153,10 +153,10 @@
         sym_right {
             display-name = "SYM R";
             bindings = <
+                &none  &none  &none  &none  &none  &none    &none  &none  &none  &none  &none  &none
                 &none  &trans  &trans  &trans  &trans  &trans    &trans  &kp UNDER  &kp SQT  &kp PIPE  &trans  &none
                 &none  &kp CARET  &kp STAR  &kp AMPS  &none  &trans    &kp HASH  &kp MINUS  &kp DQT  &kp FSLH  &kp DOLLAR  &none
                 &none  &trans  &trans  &trans  &trans  &trans    &trans  &kp TILDE  &kp GRAVE  &kp BSLH  &trans  &none
-                &none  &none  &none  &none  &none  &none    &none  &none  &none  &none  &none  &none
                 &none  &none  &none    &none  &none  &none
                 &none  &trans  &trans    &trans  &trans  &none
             >;
@@ -165,10 +165,10 @@
         sym_left {
             display-name = "SYM L";
             bindings = <
+                &none  &none  &none  &none  &none  &none    &none  &none  &none  &none  &none  &none
                 &none  &trans  &kp EXCL  &kp COLON  &kp SEMI  &trans    &trans  &trans  &trans  &trans  &trans  &none
                 &none  &kp LT  &kp LBKT  &kp LBRC  &kp LPAR  &kp AT    &trans  &none  &kp EQL  &kp PLUS  &kp PERCENT  &none
                 &none  &kp GT  &kp RBKT  &kp RBRC  &kp RPAR  &trans    &trans  &trans  &trans  &trans  &trans  &none
-                &none  &none  &none  &none  &none  &none    &none  &none  &none  &none  &none  &none
                 &none  &none  &none    &none  &none  &none
                 &none  &trans  &trans    &trans  &trans  &none
             >;
@@ -177,10 +177,10 @@
         num {
             display-name = "NUM";
             bindings = <
+                &none  &none  &none  &none  &none  &none    &none  &none  &none  &none  &none  &none
                 &none  &kp FSLH  &kp N7  &kp N8  &kp N9  &kp PLUS    &trans  &trans  &trans  &trans  &trans  &none
                 &none  &kp N0  &kp N1  &kp N2  &kp N3  &kp MINUS    &trans  &sk LGUI  &none  &trans  &trans  &none
                 &none  &kp STAR  &kp N4  &kp N5  &kp N6  &kp EQL    &trans  &sk LC(LS(LALT))  &trans  &trans  &trans  &none
-                &none  &none  &none  &none  &none  &none    &none  &none  &none  &none  &none  &none
                 &none  &none  &none    &none  &none  &none
                 &none  &trans  &trans    &trans  &trans  &none
             >;
@@ -189,10 +189,10 @@
         util {
             display-name = "UTIL";
             bindings = <
+                &none  &none  &none  &none  &none  &none    &none  &none  &none  &none  &none  &none
                 &none  &trans  &kp COLON  &kp QMARK  &kp EXCL  &trans    &trans  _HYPR(LEFT)  _HYPR(UP)  _HYPR(RIGHT)  &trans  &none
                 &none  &trans  _1PASS  _RAYCAST  &kp ESC  &trans    &trans  &sk LGUI  &sk LCTL  &sk LSHIFT  &sk LALT  &none
                 &none  &trans  &trans  &trans  &trans  &trans    &trans  &kp F13  &trans  &trans  &trans  &none
-                &none  &none  &none  &none  &none  &none    &none  &none  &none  &none  &none  &none
                 &none  &none  &none    &none  &none  &none
                 &none  &trans  &trans    &none  &trans  &none
             >;
@@ -201,10 +201,10 @@
         sys {
             display-name = "SYS";
             bindings = <
+                &none  &none  &none  &none  &none  &none    &none  &none  &none  &none  &none  &none
                 &none  &bootloader  &out OUT_USB  &out OUT_BLE  &bt BT_CLR  &studio_unlock    &trans  &trans  &trans  &trans  &bootloader  &none
                 &none  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &trans  &trans  &trans  &trans  &trans  &none
                 &none  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &none
-                &none  &none  &none  &none  &none  &none    &none  &none  &none  &none  &none  &none
                 &none  &none  &none    &none  &none  &none
                 &none  &none  &trans    &trans  &trans  &none
             >;
@@ -213,10 +213,10 @@
         mouse {
             display-name = "MOU";
             bindings = <
-                &none  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &none
-                &none  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &none
-                &none  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &none
                 &none  &none  &none  &none  &none  &none    &none  &none  &none  &none  &none  &none
+                &none  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &none
+                &none  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &none
+                &none  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &none
                 &none  &none  &none    &none  &none  &none
                 &none  &mkp LCLK  &mkp RCLK    &mkp LCLK  &mkp RCLK  &none
             >;

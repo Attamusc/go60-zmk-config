@@ -4,48 +4,48 @@
 
 Go60 binding order is four 12-key rows, six bottom-corner keys, then the thumbs in this order: `L_T1 L_T2 L_T3 R_T3 R_T2 R_T1`.
 
-The finger map uses Go60 C5 through C1 on the left and C1 through C5 on the right, leaving each C6 outer column unused. The thumb map uses T2 and T3 on each half because those are the inner two, matching the Toucan's two active thumb positions. This is a proposed physical mapping and must be validated on the keyboard.
+The Toucan's three typing rows map to the Go60's three stock alpha rows, R2 through R4. The entire Go60 number row (R1) is disabled. Each alpha row uses C5 through C1 on the left and C1 through C5 on the right, leaving C6 unused. The thumb map uses T2 and T3 on each half because those are the inner two, matching the Toucan's two active thumb positions. This is a proposed physical mapping and must be validated on the keyboard.
 
 | Toucan position | Go60 position | Go60 index | BASE binding |
 |---:|---|---:|---|
-| 1 | L_C5R1 | 1 | `Q` |
-| 2 | L_C4R1 | 2 | `W` |
-| 3 | L_C3R1 | 3 | `E` |
-| 4 | L_C2R1 | 4 | `R` |
-| 5 | L_C1R1 | 5 | `T` |
-| 6 | R_C1R1 | 6 | `Y` |
-| 7 | R_C2R1 | 7 | `U` |
-| 8 | R_C3R1 | 8 | `I` |
-| 9 | R_C4R1 | 9 | `O` |
-| 10 | R_C5R1 | 10 | `P` |
-| 13 | L_C5R2 | 13 | `A` |
-| 14 | L_C4R2 | 14 | `S` |
-| 15 | L_C3R2 | 15 | hold `NAV`, tap `D` |
-| 16 | L_C2R2 | 16 | hold `SYM_RIGHT`, tap `F` |
-| 17 | L_C1R2 | 17 | `G` |
-| 18 | R_C1R2 | 18 | `H` |
-| 19 | R_C2R2 | 19 | hold `SYM_LEFT`, tap `J` |
-| 20 | R_C3R2 | 20 | hold `NUM`, tap `K` |
-| 21 | R_C4R2 | 21 | `L` |
-| 22 | R_C5R2 | 22 | Backspace |
-| 25 | L_C5R3 | 25 | `Z` |
-| 26 | L_C4R3 | 26 | `X` |
-| 27 | L_C3R3 | 27 | `C` |
-| 28 | L_C2R3 | 28 | `V` |
-| 29 | L_C1R3 | 29 | `B` |
-| 30 | R_C1R3 | 30 | `N` |
-| 31 | R_C2R3 | 31 | `M` |
-| 32 | R_C3R3 | 32 | Comma |
-| 33 | R_C4R3 | 33 | Period |
-| 34 | R_C5R3 | 34 | Enter |
+| 1 | L_C5R2 | 13 | `Q` |
+| 2 | L_C4R2 | 14 | `W` |
+| 3 | L_C3R2 | 15 | `E` |
+| 4 | L_C2R2 | 16 | `R` |
+| 5 | L_C1R2 | 17 | `T` |
+| 6 | R_C1R2 | 18 | `Y` |
+| 7 | R_C2R2 | 19 | `U` |
+| 8 | R_C3R2 | 20 | `I` |
+| 9 | R_C4R2 | 21 | `O` |
+| 10 | R_C5R2 | 22 | `P` |
+| 13 | L_C5R3 | 25 | `A` |
+| 14 | L_C4R3 | 26 | `S` |
+| 15 | L_C3R3 | 27 | hold `NAV`, tap `D` |
+| 16 | L_C2R3 | 28 | hold `SYM_RIGHT`, tap `F` |
+| 17 | L_C1R3 | 29 | `G` |
+| 18 | R_C1R3 | 30 | `H` |
+| 19 | R_C2R3 | 31 | hold `SYM_LEFT`, tap `J` |
+| 20 | R_C3R3 | 32 | hold `NUM`, tap `K` |
+| 21 | R_C4R3 | 33 | `L` |
+| 22 | R_C5R3 | 34 | Backspace |
+| 25 | L_C5R4 | 37 | `Z` |
+| 26 | L_C4R4 | 38 | `X` |
+| 27 | L_C3R4 | 39 | `C` |
+| 28 | L_C2R4 | 40 | `V` |
+| 29 | L_C1R4 | 41 | `B` |
+| 30 | R_C1R4 | 42 | `N` |
+| 31 | R_C2R4 | 43 | `M` |
+| 32 | R_C3R4 | 44 | Comma |
+| 33 | R_C4R4 | 45 | Period |
+| 34 | R_C5R4 | 46 | Enter |
 | 37 | L_T2 | 55 | hold Left GUI, tap F12 |
 | 38 | L_T3 | 56 | Left Shift |
 | 39 | R_T3 | 57 | hold `UTIL`, tap Space |
 | 40 | R_T2 | 58 | hold Left Control, tap Tab |
 
-The matching finger indices happen to have the same numbers in the two layouts because both orders begin with six positions per half. Combos were rebuilt against named Go60 physical positions in `config/go60.keymap`; the Toucan's numeric combo arrays were not copied.
+Combos were rebuilt against these named Go60 physical positions in `config/go60.keymap`; the Toucan's numeric combo arrays were not copied.
 
-Excluded Go60 positions are C6 on the first three rows, all 12 keys on row 4, all six bottom-corner keys, and T1 on each half. They are `&none` on every layer.
+Excluded Go60 positions are all 12 keys on R1, C6 on R2 through R4, all six bottom-corner keys, and T1 on each half. They are `&none` on every layer.
 
 ## Parity checklist
 
@@ -64,7 +64,7 @@ Excluded Go60 positions are C6 on the first three rows, all 12 keys on row 4, al
 
 - Each layer has 60 bindings; 26 positions are always disabled.
 - The active thumbs move to Go60 T2/T3. This is an ergonomic proposal, not a measured result.
-- `SYS` adds `OUT_USB`, `OUT_BLE`, and `&studio_unlock` on positions that were transparent in the Toucan map. Hold both active right thumbs for `SYS`; the unlock binding is L_C1R1.
+- `SYS` adds `OUT_USB`, `OUT_BLE`, and `&studio_unlock` on positions that were transparent in the Toucan map. Hold both active right thumbs for `SYS`; the unlock binding is L_C1R2.
 - Toucan middle-click bindings were on the two excluded outer thumbs. They are not moved onto another key, because every position outside the 34-key footprint must remain `&none`.
 
 ### Different or unsupported

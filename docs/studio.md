@@ -24,7 +24,7 @@ Do not clear pairings merely to test BLE. Ask before any pairing reset.
 
 1. Flash the tested combined firmware to both halves using the procedure below.
 2. Connect to the left/central half using BLE or USB.
-3. Hold both active right thumbs (`R_T3` + `R_T2`) to enter `SYS`, then press `L_C1R1` for `&studio_unlock`.
+3. Hold both active right thumbs (`R_T3` + `R_T2`) to enter `SYS`, then press `L_C1R2` for `&studio_unlock`.
 4. In Studio, change one low-risk binding and save it.
 5. Confirm the binding changes immediately.
 6. Disconnect and reconnect, then reboot the keyboard and confirm whether the saved edit persists.
