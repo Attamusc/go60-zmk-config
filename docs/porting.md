@@ -51,11 +51,11 @@ Excluded Go60 positions are all 12 keys on R1, C6 on R2 through R4, all six bott
 
 ### Preserved
 
-- Eight layers and their typing/navigation intent.
+- All eight layer definitions. `BASE` through `SYS` retain their typing/navigation intent, and `MOUSE` retains the four active-thumb click bindings.
 - `&mt`: balanced, 280 ms tapping term, 175 ms quick tap and prior-idle requirement.
 - `&lt`: balanced, 200 ms tapping term, 175 ms quick tap.
 - `&sk`: 900 ms release, quick release, modifier presses ignored.
-- The custom hold-preferred `qt` behavior and its 200 ms timing.
+- The custom hold-preferred `qt` definition and its 200 ms timing. It remains unreferenced, as it was in the active Toucan keymap.
 - Six combos: SYS, Escape, left/right Hyper, and left/right Meh. Combo members use Go60 position names.
 - Toucan macros for Hyper, 1Password, and Raycast.
 - MoErgo's right Cirque pointer scaling and left Cirque scroll/right-click processing, including the vendor layer 2 and layer 4 overrides.
@@ -64,14 +64,14 @@ Excluded Go60 positions are all 12 keys on R1, C6 on R2 through R4, all six bott
 
 - Each layer has 60 bindings; 26 positions are always disabled.
 - The active thumbs move to Go60 T2/T3. This is an ergonomic proposal, not a measured result.
-- `SYS` adds `OUT_USB`, `OUT_BLE`, and `&studio_unlock` on positions that were transparent in the Toucan map. Hold both active right thumbs for `SYS`; the unlock binding is L_C1R2.
+- `SYS` adds `OUT_USB`, `OUT_BLE`, `&studio_unlock`, and a manual `&tog MOUSE` fallback on positions that were transparent in the Toucan map. Hold both active right thumbs for `SYS`; unlock is L_C1R2 and the mouse toggle is R_C1R2.
 - Toucan middle-click bindings were on the two excluded outer thumbs. They are not moved onto another key, because every position outside the 34-key footprint must remain `&none`.
 
 ### Different or unsupported
 
 - Toucan's Azoteq TPS43 driver, display, GPIO/matrix, split-input, zoom, swipe, three-finger gesture, and touch-to-`MOUSE` processor are not copied.
 - Go60 keeps its two vendor Cirque trackpads. The right pad is a pointer by default and is faster on layer 2 (`SYM_RIGHT`). The left pad scrolls and maps click to right-click by default, then becomes a pointer on layer 4 (`NUM`).
-- `MOUSE` retains left/right click bindings on the four active thumbs, but Toucan's touch-driven layer activation is unavailable without changing Go60's vendor input processors. No replacement activation gesture is claimed.
+- Toucan's touch-driven `MOUSE` activation is unavailable without changing Go60's vendor input processors. Use the documented `SYS` binding at R_C1R2 to toggle `MOUSE` manually; no replacement touch gesture is claimed.
 
 ### Unverified on hardware
 

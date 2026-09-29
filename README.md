@@ -53,6 +53,7 @@ Every layer supplies all 60 Go60 bindings. The 26 positions outside the proposed
 
 - [Toucan-to-Go60 position map and parity checklist](docs/porting.md)
 - [Studio experiment, restore, and recovery procedure](docs/studio.md)
+- [Staged build evidence and artifact hashes](docs/build-evidence.md)
 
 ## Flashing
 
