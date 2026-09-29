@@ -22,7 +22,7 @@ The nanopb module at the pinned revision has Python generator shebangs that do n
 Every push and pull request runs `.github/workflows/build.yml`.
 
 ```sh
-gh workflow run build.yml --repo Attamusc/go60-zmk-config --ref experiment/studio
+gh workflow run build.yml --repo Attamusc/go60-zmk-config --ref main
 gh run list --repo Attamusc/go60-zmk-config --workflow build.yml --limit 5
 gh run download RUN_ID --repo Attamusc/go60-zmk-config --name go60.uf2
 ```
