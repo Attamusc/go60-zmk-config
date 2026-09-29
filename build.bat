@@ -4,9 +4,9 @@ setlocal enabledelayedexpansion
 
 set IMAGE=go60-zmk-config-docker
 
-:: Set branch name from first parameter, default to main if not provided
+:: Set revision from first parameter, default to the tested MoErgo ZMK commit
 if "%~1"=="" (
-	set BRANCH=main
+	set BRANCH=4b2f3b9b718a4508e87111cdec24cda16f3c2726
 ) else (
 	set BRANCH=%~1
 )
