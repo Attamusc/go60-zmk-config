@@ -33,7 +33,7 @@ let
   go60_right = firmware.zmk.override {
     board = "go60_rh";
     keymap = "${config}/go60.keymap";
-    kconfig = "${config}/go60.conf";
+    kconfig = "${config}/go60_rh.conf";
   };
 
 in firmware.combine_uf2 go60_left go60_right "go60"

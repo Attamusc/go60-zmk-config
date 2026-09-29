@@ -1,37 +1,63 @@
-# MoErgo Go60 Custom Configuration for ZMK
+# Go60 ZMK configuration
 
-![MoErgo Logo](moergo_logo.png)
+Version-controlled firmware configuration for Attamusc's MoErgo Go60. The keymap ports the 34 active positions from the [Toucan configuration](https://github.com/attamusc/zmk-keyboard-toucan) onto the Go60 while retaining MoErgo's Go60 board and dual-Cirque configuration.
 
-This repo is the official ZMK configuration of the MoErgo Go60 wireless split keyboard. Use it to develop your own keymap and easily build your own ZMK firmware to run on your Go60.
+Git is the source of truth. ZMK Studio is used to try binding changes, not as a second authoritative editor. See [the Studio workflow](docs/studio.md) before saving live changes.
 
-**NOTE: You can also customize the layout of your Go60 keyboard with the Go60 Layout Editor webapp. For most users Go60 Layout Editor is the recommended and simpler option. More information is available at the official MoErgo Go60 Support site (see resources below).**
+## Firmware source
 
-These steps will get you using your keymap on your keyboard in the fastest time possible. It uses the GitHub Actions feature to build your firmware online.
+- Configuration template: [`moergo-keyboards/go60-zmk-config`](https://github.com/moergo-keyboards/go60-zmk-config), template commit `8ccc8543191a95d6d676032ecb9a834634bda18e`
+- MoErgo ZMK fork: [`moergo-sc/zmk`](https://github.com/moergo-sc/zmk)
+- Pinned fork revision: `4b2f3b9b718a4508e87111cdec24cda16f3c2726`
+- Studio: enabled only for `go60_lh`, the central half
+- Studio USB transport: `studio-rpc-usb-uart`, left half only
+- Output: one combined `go60.uf2` for both halves
 
-If you are looking to dig deeper into ZMK and develop new functionality, it is recommended to follow the steps of installing ZMK as found on the official ZMK documentation site (linked below).
+The nanopb module at the pinned revision has Python generator shebangs that do not run inside a Nix sandbox. `config/default.nix` creates a Nix-compatible copy of that module for the Studio-enabled left build only. No firmware fork is kept in this repository.
 
-## Resources
-- The [official MoErgo Go60 Support](https://moergo.com/go60-support) web site. Go60 documentation and other technical resources.
-- The [official MoErgo Discord Server](https://moergo.com/discord). Instant conversations with other Go60 users.
+## Build
 
-- The [official ZMK Documentation](https://zmk.dev/docs) web site. Find the answers to many of your questions about ZMK Firmware.
-- The [official ZMK Discord Server](https://discord.gg/8cfMkQksSB). Instant conversations with other ZMK developers and users. Great technical resource!
+### GitHub Actions (verified)
 
-- The [official MoErgo ZMK Distribution](https://github.com/moergo-sc/zmk). Repository for ZMK firmware customized for Go60 and Glove80.
+Every push and pull request runs `.github/workflows/build.yml`.
 
-## Instructions
-1. Log into, or sign up for, your personal GitHub account.
-2. Create your own repository using this repository as a template ([instructions](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template)) and check it out on your local computer.
-3. Edit the keymap file(s) to suit your needs
-4. Commit and push your changes to your personal repo. Upon pushing it, GitHub Actions will start building a new version of your firmware with the updated keymap.
+```sh
+gh workflow run build.yml --repo Attamusc/go60-zmk-config --ref experiment/studio
+gh run list --repo Attamusc/go60-zmk-config --workflow build.yml --limit 5
+gh run download RUN_ID --repo Attamusc/go60-zmk-config --name go60.uf2
+```
 
-## Firmware Files
-To locate your firmware files and reflash your Go60...
-1. log into GitHub and navigate to your personal config repository you just uploaded your keymap changes to.
-2. Click "Actions" in the main navigation, and in the left navigation click the "Build" link.
-3. Select the desired workflow run in the centre area of the page (based on date and time of the build you wish to use). You can also start a new build from this page by clicking the "Run workflow" button.
-4. After clicking the desired workflow run, you should be presented with a section at the bottom of the page called "Artifacts". This section contains the results of your build, in a file called "go60.uf2"
-5. Download the go60.uf2
-6. Flash the firmware to Go60 according to the user documentation on the official Go60 Support website (linked above)
+The downloadable artifact contains `go60.uf2`. The workflow checks out the exact MoErgo ZMK revision listed above; it does not follow `main`.
 
-Your keyboard is now ready to use.
+### Local container build
+
+The template's local build requires Docker:
+
+```sh
+./build.sh
+```
+
+An explicit revision can still be supplied:
+
+```sh
+./build.sh 4b2f3b9b718a4508e87111cdec24cda16f3c2726
+```
+
+Docker is not installed on the Fedora development machine used for this port, so the local path is unverified. GitHub Actions is the tested build path.
+
+## Keymap
+
+`config/go60.keymap` contains eight layers: `BASE`, `NAV`, `SYM_RIGHT`, `SYM_LEFT`, `NUM`, `UTIL`, `SYS`, and `MOUSE`.
+
+Every layer supplies all 60 Go60 bindings. The 26 positions outside the proposed 34-key footprint are `&none` on every layer. The proposed thumb mapping uses T2 and T3 on each half; validate that choice on the physical keyboard before treating it as ergonomically settled.
+
+- [Toucan-to-Go60 position map and parity checklist](docs/porting.md)
+- [Studio experiment, restore, and recovery procedure](docs/studio.md)
+
+## Flashing
+
+Do not flash either half or reset Bluetooth settings without the keyboard owner's approval. When approved, follow [the recovery-flashing procedure](docs/studio.md#recovery-flashing).
+
+## Current verification status
+
+The unmodified template, pinned template, minimal Studio configuration, and full port all build in GitHub Actions. No Go60 was connected over USB or Bluetooth during this work. Live Studio editing, physical ergonomics, key behavior, trackpads, flashing, reconnect behavior, and restore behavior remain **UNVERIFIED ON HARDWARE**.
