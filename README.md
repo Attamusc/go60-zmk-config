@@ -49,7 +49,7 @@ Docker is not installed on the Fedora development machine used for this port, so
 
 `config/go60.keymap` contains eight layers: `BASE`, `NAV`, `SYM_RIGHT`, `SYM_LEFT`, `NUM`, `UTIL`, `SYS`, and `MOUSE`.
 
-Every layer supplies all 60 Go60 bindings. The 26 positions outside the proposed 34-key footprint are `&none` on every layer. The proposed thumb mapping uses T2 and T3 on each half; validate that choice on the physical keyboard before treating it as ergonomically settled.
+Every layer supplies all 60 Go60 bindings. BASE also uses the ten inner number-row keys for `1`–`0` and right T1 for `Ctrl+Enter`. On MOUSE, the left thumbs provide middle/left/right clicks (T1/T2/T3), while the right thumbs remain transparent to BASE; the number row and `Ctrl+Enter` also remain available. The remaining 14 positions are `&none` on every layer. Validate T1 reach on the physical keyboard.
 
 - [Toucan-to-Go60 position map and parity checklist](docs/porting.md)
 - [Studio experiment, restore, and recovery procedure](docs/studio.md)

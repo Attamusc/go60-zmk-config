@@ -54,10 +54,10 @@ If normal bootloader entry fails, stop and consult the current [MoErgo Go60 trou
 
 - [ ] Studio connects to the left half through the selected transport.
 - [ ] One binding changes live, survives reconnect/reboot as expected, and can be restored.
-- [ ] Only the mapped 34 positions act on all eight layers.
+- [ ] The original 34 positions, ten number-row keys, BASE right T1 `Ctrl+Enter`, and MOUSE left T1 middle-click behave as mapped; the other 14 positions stay disabled.
 - [ ] All six combos trigger without accidental activations.
 - [ ] Layer-taps, mod-taps, and sticky modifiers match the Toucan timing intent.
-- [ ] The manual `SYS` + R_C1R2 `MOUSE` toggle, four thumb clicks, both Cirque trackpads, and vendor layer 2/layer 4 modes behave correctly.
+- [ ] The manual `SYS` + R_C1R2 `MOUSE` toggle, three left-thumb clicks, right-thumb passthrough, both Cirque trackpads, and vendor layer 2/layer 4 modes behave correctly.
 - [ ] Both halves reconnect after reboot.
 - [ ] Restore Stock Settings exposes the committed keymap.
 - [ ] Recovery flashing works on both halves.

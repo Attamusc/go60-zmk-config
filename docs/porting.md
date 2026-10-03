@@ -45,13 +45,15 @@ The Toucan's three typing rows map to the Go60's three stock alpha rows, R2 thro
 
 Combos were rebuilt against these named Go60 physical positions in `config/go60.keymap`; the Toucan's numeric combo arrays were not copied.
 
-Excluded Go60 positions are all 12 keys on R1, C6 on R2 through R4, all six bottom-corner keys, and T1 on each half. They are `&none` on every layer.
+The original 34-key port excluded all 12 keys on R1, C6 on R2 through R4, all six bottom-corner keys, and T1 on each half. After adding digits and `Ctrl+Enter` on BASE and middle-click on L_T1 in MOUSE, the two outer R1 keys, C6 on R2 through R4, and all six bottom-corner keys remain `&none` on every layer.
+
+The BASE layer additionally maps L_C5R1 through L_C1R1 to `1`–`5`, R_C1R1 through R_C5R1 to `6`–`0`, and R_T1 to `Ctrl+Enter` (Pi input newline). These are additions beyond the original Toucan 34-key footprint; reach and behavior are unverified on hardware.
 
 ## Parity checklist
 
 ### Preserved
 
-- All eight layer definitions. `BASE` through `SYS` retain their typing/navigation intent, and `MOUSE` retains the four active-thumb click bindings.
+- All eight layer definitions. `BASE` through `SYS` retain their typing/navigation intent; `MOUSE` now places middle/left/right clicks on the left thumbs and leaves the right thumbs transparent.
 - `&mt`: balanced, 280 ms tapping term, 175 ms quick tap and prior-idle requirement.
 - `&lt`: balanced, 200 ms tapping term, 175 ms quick tap.
 - `&sk`: 900 ms release, quick release, modifier presses ignored.
@@ -62,20 +64,20 @@ Excluded Go60 positions are all 12 keys on R1, C6 on R2 through R4, all six bott
 
 ### Changed intentionally
 
-- Each layer has 60 bindings; 26 positions are always disabled.
+- Each layer has 60 bindings; 14 positions remain disabled on every layer. BASE adds ten number-row keys and right T1. MOUSE passes those bindings through and assigns L_T1 to middle-click.
 - The active thumbs move to Go60 T2/T3. This is an ergonomic proposal, not a measured result.
 - `SYS` adds `OUT_USB`, `OUT_BLE`, `&studio_unlock`, and a manual `&tog MOUSE` fallback on positions that were transparent in the Toucan map. Hold both active right thumbs for `SYS`; unlock is L_C1R2 and the mouse toggle is R_C1R2.
-- Toucan middle-click bindings were on the two excluded outer thumbs. They are not moved onto another key, because every position outside the 34-key footprint must remain `&none`.
+- Toucan middle-click bindings were on the two outer thumbs. MOUSE restores it on L_T1; R_T1 sends `Ctrl+Enter` on BASE and stays transparent on MOUSE.
 
 ### Different or unsupported
 
 - Toucan's Azoteq TPS43 driver, display, GPIO/matrix, split-input, zoom, swipe, three-finger gesture, and touch-to-`MOUSE` processor are not copied.
 - Go60 keeps its two vendor Cirque trackpads. The right pad is a pointer by default and is faster on layer 2 (`SYM_RIGHT`). The left pad scrolls and maps click to right-click by default, then becomes a pointer on layer 4 (`NUM`).
-- Toucan's touch-driven `MOUSE` activation is unavailable without changing Go60's vendor input processors. Use the documented `SYS` binding at R_C1R2 to toggle `MOUSE` manually; no replacement touch gesture is claimed.
+- Toucan's touch-driven `MOUSE` activation is unavailable without changing Go60's vendor input processors. Use the documented `SYS` binding at R_C1R2 to toggle `MOUSE` manually. The right pad remains the pointer, the left pad remains the scroll/right-click pad, and MOUSE leaves right thumbs, number row, and `Ctrl+Enter` available; no replacement touch gesture is claimed.
 
 ### Unverified on hardware
 
-- T2/T3 comfort and reach.
+- T2/T3 comfort and reach, left T1 middle-click, right T1 `Ctrl+Enter`, and the new number-row keys.
 - All layer-taps, mod-taps, sticky modifiers, and six combos under real typing.
 - Studio unlock, USB/BLE Studio connections, a saved live edit, and restore behavior.
 - Both Cirque trackpads, their layer-specific modes, split reconnect, reboot persistence, and firmware flashing.
