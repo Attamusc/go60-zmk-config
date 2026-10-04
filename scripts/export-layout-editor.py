@@ -14,6 +14,7 @@ SOURCE = KEYMAP.read_text()
 LAYER_NAMES = ["base", "nav", "sym_right", "sym_left", "num", "util", "sys", "mouse"]
 LAYER_IDS = {name.upper(): i for i, name in enumerate(LAYER_NAMES)}
 BINDING = re.compile(r"&\w+|_HYPR\(\w+\)|_RAYCAST|_1PASS")
+KEY_ALIASES = {"LCTL": "LCTRL", "EQL": "EQUAL"}
 
 
 def block(start):
@@ -32,7 +33,7 @@ def arg(expression):
         raise ValueError(f"Empty argument: {expression!r}")
 
     def node(index):
-        value = tokens[index]
+        value = KEY_ALIASES.get(tokens[index], tokens[index])
         index += 1
         result = {"value": value}
         if index < len(tokens) and tokens[index] == "(":
@@ -61,6 +62,8 @@ def binding(expression):
     elif expression == "_1PASS":
         expression = "&kp LG(LS(SPACE))"
     name, _, arguments = expression.partition(" ")
+    if name == "&studio_unlock":
+        return {"value": "Custom", "params": [{"value": "&studio_unlock"}]}
     params = []
     for item in arguments.split():
         if item in LAYER_IDS:

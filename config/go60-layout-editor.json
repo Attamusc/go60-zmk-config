@@ -438,7 +438,7 @@
         "value": "&mt",
         "params": [
           {
-            "value": "LCTL"
+            "value": "LCTRL"
           },
           {
             "value": "TAB"
@@ -1094,7 +1094,7 @@
         "value": "&kp",
         "params": [
           {
-            "value": "EQL"
+            "value": "EQUAL"
           }
         ]
       },
@@ -1413,7 +1413,7 @@
         "value": "&kp",
         "params": [
           {
-            "value": "EQL"
+            "value": "EQUAL"
           }
         ]
       },
@@ -1713,7 +1713,7 @@
         "value": "&sk",
         "params": [
           {
-            "value": "LCTL"
+            "value": "LCTRL"
           }
         ]
       },
@@ -1882,7 +1882,12 @@
         ]
       },
       {
-        "value": "&studio_unlock"
+        "value": "Custom",
+        "params": [
+          {
+            "value": "&studio_unlock"
+          }
+        ]
       },
       {
         "value": "&tog",
