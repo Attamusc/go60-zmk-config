@@ -51,6 +51,8 @@ Docker is not installed on the Fedora development machine used for this port, so
 
 Every layer supplies all 60 Go60 bindings. BASE also uses the ten inner number-row keys for `1`–`0` and right T1 for `Ctrl+Enter`. On MOUSE, the left thumbs provide middle/left/right clicks (T1/T2/T3), while the right thumbs remain transparent to BASE; the number row and `Ctrl+Enter` also remain available. The remaining 14 positions are `&none` on every layer. Validate T1 reach on the physical keyboard.
 
+For a preview in the MoErgo Go60 Layout Editor, run `python3 scripts/export-layout-editor.py` and import `config/go60-layout-editor.json` after enabling **Settings → Local Backup and Restore**. This is a derived JSON backup, not a firmware source: editor import, generated firmware parity, and live thumb placement still require verification. Do not replace this repository's keymap with editor-generated firmware without comparing its behaviors and trackpad configuration.
+
 - [Toucan-to-Go60 position map and parity checklist](docs/porting.md)
 - [Studio experiment, restore, and recovery procedure](docs/studio.md)
 - [Staged build evidence and artifact hashes](docs/build-evidence.md)
