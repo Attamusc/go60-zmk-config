@@ -134,7 +134,7 @@
                 &none  &kp A  &kp S  &lt NAV D  &lt SYM_RIGHT F  &kp G    &kp H  &lt SYM_LEFT J  &lt NUM K  &kp L  &kp BSPC  &none
                 &none  &kp Z  &kp X  &kp C  &kp V  &kp B    &kp N  &kp M  &kp COMMA  &kp DOT  &kp ENTER  &none
                 &none  &none  &none    &none  &none  &none
-                &none  &mt LGUI F12  &kp LSHIFT    &lt UTIL SPACE  &mt LCTL TAB  &kp LC(ENTER)
+                &mt LGUI F12  &kp LSHIFT  &none    &kp LC(ENTER)  &lt UTIL SPACE  &mt LCTRL TAB
             >;
         };
 
@@ -146,7 +146,7 @@
                 &none  &kp DEL  &kp BSPC  &none  &kp LA(LGUI)  &trans    &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &trans  &none
                 &none  &trans  &trans  &trans  &trans  &trans    &trans  &kp HOME  &kp PG_DN  &kp END  &trans  &none
                 &none  &none  &none    &none  &none  &none
-                &none  &trans  &trans    &trans  &trans  &none
+                &trans  &trans  &trans    &trans  &trans  &trans
             >;
         };
 
@@ -154,11 +154,11 @@
             display-name = "SYM R";
             bindings = <
                 &none  &none  &none  &none  &none  &none    &none  &none  &none  &none  &none  &none
-                &none  &trans  &trans  &trans  &trans  &trans    &trans  &kp UNDER  &kp SQT  &kp PIPE  &trans  &none
-                &none  &kp CARET  &kp STAR  &kp AMPS  &none  &trans    &kp HASH  &kp MINUS  &kp DQT  &kp FSLH  &kp DOLLAR  &none
-                &none  &trans  &trans  &trans  &trans  &trans    &trans  &kp TILDE  &kp GRAVE  &kp BSLH  &trans  &none
+                &none  &trans  &trans  &trans  &trans  &trans    &trans  &kp LS(MINUS)  &kp SQT  &kp LS(BSLH)  &trans  &none
+                &none  &kp LS(N6)  &kp LS(N8)  &kp LS(N7)  &none  &trans    &kp LS(N3)  &kp MINUS  &kp LS(SINGLE_QUOTE)  &kp FSLH  &kp LS(N4)  &none
+                &none  &trans  &trans  &trans  &trans  &trans    &trans  &kp LS(GRAVE)  &kp GRAVE  &kp BSLH  &trans  &none
                 &none  &none  &none    &none  &none  &none
-                &none  &trans  &trans    &trans  &trans  &none
+                &trans  &trans  &trans    &trans  &trans  &trans
             >;
         };
 
@@ -166,11 +166,11 @@
             display-name = "SYM L";
             bindings = <
                 &none  &none  &none  &none  &none  &none    &none  &none  &none  &none  &none  &none
-                &none  &trans  &kp EXCL  &kp COLON  &kp SEMI  &trans    &trans  &trans  &trans  &trans  &trans  &none
-                &none  &kp LT  &kp LBKT  &kp LBRC  &kp LPAR  &kp AT    &trans  &none  &kp EQL  &kp PLUS  &kp PERCENT  &none
-                &none  &kp GT  &kp RBKT  &kp RBRC  &kp RPAR  &trans    &trans  &trans  &trans  &trans  &trans  &none
+                &none  &trans  &kp LS(N1)  &kp LS(SEMI)  &kp SEMI  &trans    &trans  &trans  &trans  &trans  &trans  &none
+                &none  &kp LS(COMMA)  &kp LBKT  &kp LS(LBKT)  &kp LS(N9)  &kp LS(N2)    &trans  &none  &kp EQUAL  &kp LS(EQUAL)  &kp LS(N5)  &none
+                &none  &kp LS(DOT)  &kp RBKT  &kp LS(RBKT)  &kp LS(N0)  &trans    &trans  &trans  &trans  &trans  &trans  &none
                 &none  &none  &none    &none  &none  &none
-                &none  &trans  &trans    &trans  &trans  &none
+                &trans  &trans  &trans    &trans  &trans  &trans
             >;
         };
 
@@ -178,11 +178,11 @@
             display-name = "NUM";
             bindings = <
                 &none  &none  &none  &none  &none  &none    &none  &none  &none  &none  &none  &none
-                &none  &kp FSLH  &kp N7  &kp N8  &kp N9  &kp PLUS    &trans  &trans  &trans  &trans  &trans  &none
+                &none  &kp FSLH  &kp N7  &kp N8  &kp N9  &kp LS(EQUAL)    &trans  &trans  &trans  &trans  &trans  &none
                 &none  &kp N0  &kp N1  &kp N2  &kp N3  &kp MINUS    &trans  &sk LGUI  &none  &trans  &trans  &none
-                &none  &kp STAR  &kp N4  &kp N5  &kp N6  &kp EQL    &trans  &sk LC(LS(LALT))  &trans  &trans  &trans  &none
+                &none  &kp LS(N8)  &kp N4  &kp N5  &kp N6  &kp EQUAL    &trans  &sk LC(LS(LALT))  &trans  &trans  &trans  &none
                 &none  &none  &none    &none  &none  &none
-                &none  &trans  &trans    &trans  &trans  &none
+                &trans  &trans  &trans    &trans  &trans  &trans
             >;
         };
 
@@ -190,11 +190,11 @@
             display-name = "UTIL";
             bindings = <
                 &none  &none  &none  &none  &none  &none    &none  &none  &none  &none  &none  &none
-                &none  &trans  &kp COLON  &kp QMARK  &kp EXCL  &trans    &trans  _HYPR(LEFT)  _HYPR(UP)  _HYPR(RIGHT)  &trans  &none
-                &none  &trans  _1PASS  _RAYCAST  &kp ESC  &trans    &trans  &sk LGUI  &sk LCTL  &sk LSHIFT  &sk LALT  &none
+                &none  &trans  &kp LS(SEMI)  &kp LS(FSLH)  &kp LS(N1)  &trans    &trans  _HYPR(LEFT)  _HYPR(UP)  _HYPR(RIGHT)  &trans  &none
+                &none  &trans  _1PASS  _RAYCAST  &kp ESC  &trans    &trans  &sk LGUI  &sk LCTRL  &sk LSHIFT  &sk LALT  &none
                 &none  &trans  &trans  &trans  &trans  &trans    &trans  &kp F13  &trans  &trans  &trans  &none
                 &none  &none  &none    &none  &none  &none
-                &none  &trans  &trans    &none  &trans  &none
+                &trans  &trans  &trans    &trans  &trans  &trans
             >;
         };
 
@@ -218,13 +218,13 @@
                 &none  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &none
                 &none  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &none
                 &none  &none  &none    &none  &none  &none
-                &mkp MCLK  &mkp LCLK  &mkp RCLK    &trans  &trans  &trans
+                &mkp RCLK  &mkp LCLK  &mkp MCLK    &trans  &trans  &trans
             >;
         };
     };
 };
 
-/* Preserve MoErgo's dual-Cirque listener and input-processor configuration. */
+/* Dual-Cirque configuration, with the left pad scaled before scroll mapping. */
 &cirque_rh_listener {
     input-processors = <&zip_xy_scaler 3 1>;
     layer_2 {
@@ -234,7 +234,7 @@
 };
 
 &cirque_lh_listener {
-    input-processors = <&zip_xy_to_scroll_mapper>, <&zip_xy_scaler 1 8>, <&zip_click_to_right_click_mapper>;
+    input-processors = <&zip_xy_scaler 1 8>, <&zip_xy_to_scroll_mapper>, <&zip_click_to_right_click_mapper>;
     layer_4 {
         layers = <4>;
         input-processors = <&zip_xy_scaler 3 1>;

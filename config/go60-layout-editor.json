@@ -3,10 +3,10 @@
   "keyboard": "go60",
   "firmware_api_version": "1",
   "locale": "en-US",
-  "uuid": "2cbebce6-07c0-5e7e-aaaf-e5581a2cec4d",
+  "uuid": "7a8bd4cf-5a8e-54ac-b96f-9710ccf87ac5",
   "parent_uuid": "",
   "unlisted": true,
-  "date": 1791111050,
+  "date": 1791144981,
   "creator": "attamusc",
   "title": "Go60 Toucan port (preview)",
   "notes": "Preview of config/go60.keymap. Git remains the firmware source of truth; do not build or flash this editor export without comparing its generated keymap against the repository.",
@@ -402,9 +402,6 @@
         "value": "&none"
       },
       {
-        "value": "&none"
-      },
-      {
         "value": "&mt",
         "params": [
           {
@@ -420,6 +417,22 @@
         "params": [
           {
             "value": "LSHIFT"
+          }
+        ]
+      },
+      {
+        "value": "&none"
+      },
+      {
+        "value": "&kp",
+        "params": [
+          {
+            "value": "LC",
+            "params": [
+              {
+                "value": "ENTER"
+              }
+            ]
           }
         ]
       },
@@ -442,19 +455,6 @@
           },
           {
             "value": "TAB"
-          }
-        ]
-      },
-      {
-        "value": "&kp",
-        "params": [
-          {
-            "value": "LC",
-            "params": [
-              {
-                "value": "ENTER"
-              }
-            ]
           }
         ]
       }
@@ -683,9 +683,6 @@
         "value": "&none"
       },
       {
-        "value": "&none"
-      },
-      {
         "value": "&trans"
       },
       {
@@ -698,7 +695,10 @@
         "value": "&trans"
       },
       {
-        "value": "&none"
+        "value": "&trans"
+      },
+      {
+        "value": "&trans"
       }
     ],
     [
@@ -763,7 +763,12 @@
         "value": "&kp",
         "params": [
           {
-            "value": "UNDER"
+            "value": "LS",
+            "params": [
+              {
+                "value": "MINUS"
+              }
+            ]
           }
         ]
       },
@@ -779,7 +784,12 @@
         "value": "&kp",
         "params": [
           {
-            "value": "PIPE"
+            "value": "LS",
+            "params": [
+              {
+                "value": "BSLH"
+              }
+            ]
           }
         ]
       },
@@ -796,7 +806,12 @@
         "value": "&kp",
         "params": [
           {
-            "value": "CARET"
+            "value": "LS",
+            "params": [
+              {
+                "value": "N6"
+              }
+            ]
           }
         ]
       },
@@ -804,7 +819,12 @@
         "value": "&kp",
         "params": [
           {
-            "value": "STAR"
+            "value": "LS",
+            "params": [
+              {
+                "value": "N8"
+              }
+            ]
           }
         ]
       },
@@ -812,7 +832,12 @@
         "value": "&kp",
         "params": [
           {
-            "value": "AMPS"
+            "value": "LS",
+            "params": [
+              {
+                "value": "N7"
+              }
+            ]
           }
         ]
       },
@@ -826,7 +851,12 @@
         "value": "&kp",
         "params": [
           {
-            "value": "HASH"
+            "value": "LS",
+            "params": [
+              {
+                "value": "N3"
+              }
+            ]
           }
         ]
       },
@@ -842,7 +872,12 @@
         "value": "&kp",
         "params": [
           {
-            "value": "DQT"
+            "value": "LS",
+            "params": [
+              {
+                "value": "SINGLE_QUOTE"
+              }
+            ]
           }
         ]
       },
@@ -858,7 +893,12 @@
         "value": "&kp",
         "params": [
           {
-            "value": "DOLLAR"
+            "value": "LS",
+            "params": [
+              {
+                "value": "N4"
+              }
+            ]
           }
         ]
       },
@@ -890,7 +930,12 @@
         "value": "&kp",
         "params": [
           {
-            "value": "TILDE"
+            "value": "LS",
+            "params": [
+              {
+                "value": "GRAVE"
+              }
+            ]
           }
         ]
       },
@@ -935,9 +980,6 @@
         "value": "&none"
       },
       {
-        "value": "&none"
-      },
-      {
         "value": "&trans"
       },
       {
@@ -950,7 +992,10 @@
         "value": "&trans"
       },
       {
-        "value": "&none"
+        "value": "&trans"
+      },
+      {
+        "value": "&trans"
       }
     ],
     [
@@ -1000,7 +1045,12 @@
         "value": "&kp",
         "params": [
           {
-            "value": "EXCL"
+            "value": "LS",
+            "params": [
+              {
+                "value": "N1"
+              }
+            ]
           }
         ]
       },
@@ -1008,7 +1058,12 @@
         "value": "&kp",
         "params": [
           {
-            "value": "COLON"
+            "value": "LS",
+            "params": [
+              {
+                "value": "SEMI"
+              }
+            ]
           }
         ]
       },
@@ -1048,7 +1103,12 @@
         "value": "&kp",
         "params": [
           {
-            "value": "LT"
+            "value": "LS",
+            "params": [
+              {
+                "value": "COMMA"
+              }
+            ]
           }
         ]
       },
@@ -1064,7 +1124,12 @@
         "value": "&kp",
         "params": [
           {
-            "value": "LBRC"
+            "value": "LS",
+            "params": [
+              {
+                "value": "LBKT"
+              }
+            ]
           }
         ]
       },
@@ -1072,7 +1137,12 @@
         "value": "&kp",
         "params": [
           {
-            "value": "LPAR"
+            "value": "LS",
+            "params": [
+              {
+                "value": "N9"
+              }
+            ]
           }
         ]
       },
@@ -1080,7 +1150,12 @@
         "value": "&kp",
         "params": [
           {
-            "value": "AT"
+            "value": "LS",
+            "params": [
+              {
+                "value": "N2"
+              }
+            ]
           }
         ]
       },
@@ -1102,7 +1177,12 @@
         "value": "&kp",
         "params": [
           {
-            "value": "PLUS"
+            "value": "LS",
+            "params": [
+              {
+                "value": "EQUAL"
+              }
+            ]
           }
         ]
       },
@@ -1110,7 +1190,12 @@
         "value": "&kp",
         "params": [
           {
-            "value": "PERCENT"
+            "value": "LS",
+            "params": [
+              {
+                "value": "N5"
+              }
+            ]
           }
         ]
       },
@@ -1124,7 +1209,12 @@
         "value": "&kp",
         "params": [
           {
-            "value": "GT"
+            "value": "LS",
+            "params": [
+              {
+                "value": "DOT"
+              }
+            ]
           }
         ]
       },
@@ -1140,7 +1230,12 @@
         "value": "&kp",
         "params": [
           {
-            "value": "RBRC"
+            "value": "LS",
+            "params": [
+              {
+                "value": "RBKT"
+              }
+            ]
           }
         ]
       },
@@ -1148,7 +1243,12 @@
         "value": "&kp",
         "params": [
           {
-            "value": "RPAR"
+            "value": "LS",
+            "params": [
+              {
+                "value": "N0"
+              }
+            ]
           }
         ]
       },
@@ -1192,9 +1292,6 @@
         "value": "&none"
       },
       {
-        "value": "&none"
-      },
-      {
         "value": "&trans"
       },
       {
@@ -1207,7 +1304,10 @@
         "value": "&trans"
       },
       {
-        "value": "&none"
+        "value": "&trans"
+      },
+      {
+        "value": "&trans"
       }
     ],
     [
@@ -1286,7 +1386,12 @@
         "value": "&kp",
         "params": [
           {
-            "value": "PLUS"
+            "value": "LS",
+            "params": [
+              {
+                "value": "EQUAL"
+              }
+            ]
           }
         ]
       },
@@ -1381,7 +1486,12 @@
         "value": "&kp",
         "params": [
           {
-            "value": "STAR"
+            "value": "LS",
+            "params": [
+              {
+                "value": "N8"
+              }
+            ]
           }
         ]
       },
@@ -1469,9 +1579,6 @@
         "value": "&none"
       },
       {
-        "value": "&none"
-      },
-      {
         "value": "&trans"
       },
       {
@@ -1484,7 +1591,10 @@
         "value": "&trans"
       },
       {
-        "value": "&none"
+        "value": "&trans"
+      },
+      {
+        "value": "&trans"
       }
     ],
     [
@@ -1534,7 +1644,12 @@
         "value": "&kp",
         "params": [
           {
-            "value": "COLON"
+            "value": "LS",
+            "params": [
+              {
+                "value": "SEMI"
+              }
+            ]
           }
         ]
       },
@@ -1542,7 +1657,12 @@
         "value": "&kp",
         "params": [
           {
-            "value": "QMARK"
+            "value": "LS",
+            "params": [
+              {
+                "value": "FSLH"
+              }
+            ]
           }
         ]
       },
@@ -1550,7 +1670,12 @@
         "value": "&kp",
         "params": [
           {
-            "value": "EXCL"
+            "value": "LS",
+            "params": [
+              {
+                "value": "N1"
+              }
+            ]
           }
         ]
       },
@@ -1796,7 +1921,10 @@
         "value": "&none"
       },
       {
-        "value": "&none"
+        "value": "&trans"
+      },
+      {
+        "value": "&trans"
       },
       {
         "value": "&trans"
@@ -1805,13 +1933,10 @@
         "value": "&trans"
       },
       {
-        "value": "&none"
-      },
-      {
         "value": "&trans"
       },
       {
-        "value": "&none"
+        "value": "&trans"
       }
     ],
     [
@@ -2228,7 +2353,7 @@
         "value": "&mkp",
         "params": [
           {
-            "value": "MCLK"
+            "value": "RCLK"
           }
         ]
       },
@@ -2244,7 +2369,7 @@
         "value": "&mkp",
         "params": [
           {
-            "value": "RCLK"
+            "value": "MCLK"
           }
         ]
       },
@@ -2294,15 +2419,15 @@
       "code": "&cirque_lh_listener",
       "inputProcessors": [
         {
-          "code": "&zip_xy_to_scroll_mapper",
-          "params": []
-        },
-        {
           "code": "&zip_xy_scaler",
           "params": [
             1,
             8
           ]
+        },
+        {
+          "code": "&zip_xy_to_scroll_mapper",
+          "params": []
         },
         {
           "code": "&zip_click_to_right_click_mapper",

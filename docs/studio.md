@@ -24,7 +24,7 @@ Do not clear pairings merely to test BLE. Ask before any pairing reset.
 
 1. Flash the tested combined firmware to both halves using the procedure below.
 2. Connect to the left/central half using BLE or USB.
-3. Hold both active right thumbs (`R_T3` + `R_T2`) to enter `SYS`, then press `L_C1R2` for `&studio_unlock`.
+3. Hold `R_T3` + `R_T2` (`Ctrl+Enter` + Space on the revised BASE) to enter `SYS`, then press `L_C1R2` for `&studio_unlock`.
 4. In Studio, change one low-risk binding and save it.
 5. Confirm the binding changes immediately.
 6. Disconnect and reconnect, then reboot the keyboard and confirm whether the saved edit persists.
@@ -54,7 +54,7 @@ If normal bootloader entry fails, stop and consult the current [MoErgo Go60 trou
 
 - [ ] Studio connects to the left half through the selected transport.
 - [ ] One binding changes live, survives reconnect/reboot as expected, and can be restored.
-- [ ] The original 34 positions, ten number-row keys, BASE right T1 `Ctrl+Enter`, and MOUSE left T1 middle-click behave as mapped; the other 14 positions stay disabled.
+- [ ] The typing keys, ten number-row keys, revised BASE thumbs, and MOUSE left T1/T2/T3 right/left/middle clicks behave as mapped; the other 14 positions stay disabled.
 - [ ] All six combos trigger without accidental activations.
 - [ ] Layer-taps, mod-taps, and sticky modifiers match the Toucan timing intent.
 - [ ] The manual `SYS` + R_C1R2 `MOUSE` toggle, three left-thumb clicks, right-thumb passthrough, both Cirque trackpads, and vendor layer 2/layer 4 modes behave correctly.

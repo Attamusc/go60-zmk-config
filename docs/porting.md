@@ -1,10 +1,10 @@
 # Toucan-to-Go60 port
 
-## Proposed 34-key position map
+## Toucan typing-position map
 
 Go60 binding order is four 12-key rows, six bottom-corner keys, then the thumbs in this order: `L_T1 L_T2 L_T3 R_T3 R_T2 R_T1`.
 
-The Toucan's three typing rows map to the Go60's three stock alpha rows, R2 through R4. The entire Go60 number row (R1) is disabled. Each alpha row uses C5 through C1 on the left and C1 through C5 on the right, leaving C6 unused. The thumb map uses T2 and T3 on each half because those are the inner two, matching the Toucan's two active thumb positions. This is a proposed physical mapping and must be validated on the keyboard.
+The Toucan's three typing rows map to the Go60's three stock alpha rows, R2 through R4. Each alpha row uses C5 through C1 on the left and C1 through C5 on the right, leaving C6 unused. The ten inner R1 keys provide digits. The thumb mapping below incorporates the owner's revised Layout Editor export; it replaces the original T2/T3 proposal.
 
 | Toucan position | Go60 position | Go60 index | BASE binding |
 |---:|---|---:|---|
@@ -38,36 +38,37 @@ The Toucan's three typing rows map to the Go60's three stock alpha rows, R2 thro
 | 32 | R_C3R4 | 44 | Comma |
 | 33 | R_C4R4 | 45 | Period |
 | 34 | R_C5R4 | 46 | Enter |
-| 37 | L_T2 | 55 | hold Left GUI, tap F12 |
-| 38 | L_T3 | 56 | Left Shift |
-| 39 | R_T3 | 57 | hold `UTIL`, tap Space |
-| 40 | R_T2 | 58 | hold Left Control, tap Tab |
+| 37 | L_T1 | 54 | hold Left GUI, tap F12 |
+| 38 | L_T2 | 55 | Left Shift |
+| 39 | R_T2 | 58 | hold `UTIL`, tap Space |
+| 40 | R_T1 | 59 | hold Left Control, tap Tab |
 
 Combos were rebuilt against these named Go60 physical positions in `config/go60.keymap`; the Toucan's numeric combo arrays were not copied.
 
-The original 34-key port excluded all 12 keys on R1, C6 on R2 through R4, all six bottom-corner keys, and T1 on each half. After adding digits and `Ctrl+Enter` on BASE and middle-click on L_T1 in MOUSE, the two outer R1 keys, C6 on R2 through R4, and all six bottom-corner keys remain `&none` on every layer.
+The two outer R1 keys, C6 on R2 through R4, and all six bottom-corner keys remain `&none` on every layer (14 positions). L_T3 is disabled on BASE but sends middle-click on MOUSE.
 
-The BASE layer additionally maps L_C5R1 through L_C1R1 to `1`–`5`, R_C1R1 through R_C5R1 to `6`–`0`, and R_T1 to `Ctrl+Enter` (Pi input newline). These are additions beyond the original Toucan 34-key footprint; reach and behavior are unverified on hardware.
+The BASE layer additionally maps L_C5R1 through L_C1R1 to `1`–`5`, R_C1R1 through R_C5R1 to `6`–`0`, and R_T3 to `Ctrl+Enter` (Pi input newline). NAV, both symbol layers, NUM, and UTIL pass all six thumbs through; SYS uses `none/none/trans/trans/trans/none` in binding order.
 
 ## Parity checklist
 
 ### Preserved
 
-- All eight layer definitions. `BASE` through `SYS` retain their typing/navigation intent; `MOUSE` now places middle/left/right clicks on the left thumbs and leaves the right thumbs transparent.
+- All eight layer definitions. `BASE` through `SYS` retain their typing/navigation intent; `MOUSE` places right/left/middle clicks on the left thumbs and leaves the right thumbs transparent.
 - `&mt`: balanced, 280 ms tapping term, 175 ms quick tap and prior-idle requirement.
 - `&lt`: balanced, 200 ms tapping term, 175 ms quick tap.
 - `&sk`: 900 ms release, quick release, modifier presses ignored.
 - The custom hold-preferred `qt` definition and its 200 ms timing. It remains unreferenced, as it was in the active Toucan keymap.
 - Six combos: SYS, Escape, left/right Hyper, and left/right Meh. Combo members use Go60 position names.
 - Toucan macros for Hyper, 1Password, and Raycast.
-- MoErgo's right Cirque pointer scaling and left Cirque scroll/right-click processing, including the vendor layer 2 and layer 4 overrides.
+- MoErgo's right Cirque pointer scaling and the vendor layer 2 and layer 4 overrides.
 
 ### Changed intentionally
 
-- Each layer has 60 bindings; 14 positions remain disabled on every layer. BASE adds ten number-row keys and right T1. MOUSE passes those bindings through and assigns L_T1 to middle-click.
-- The active thumbs move to Go60 T2/T3. This is an ergonomic proposal, not a measured result.
-- `SYS` adds `OUT_USB`, `OUT_BLE`, `&studio_unlock`, and a manual `&tog MOUSE` fallback on positions that were transparent in the Toucan map. Hold both active right thumbs for `SYS`; unlock is L_C1R2 and the mouse toggle is R_C1R2.
-- Toucan middle-click bindings were on the two outer thumbs. MOUSE restores it on L_T1; R_T1 sends `Ctrl+Enter` on BASE and stays transparent on MOUSE.
+- Each layer has 60 bindings; 14 positions remain disabled on every layer. BASE adds ten number-row keys and right T3. MOUSE passes those bindings through and assigns L_T3 to middle-click.
+- The owner's revised thumb mapping moves GUI/F12 and Shift to left T1/T2, and Space/UTIL and Tab/Control to right T2/T1. Mouse clicks are right/left/middle on left T1/T2/T3.
+- `SYS` adds `OUT_USB`, `OUT_BLE`, `&studio_unlock`, and a manual `&tog MOUSE` fallback. Hold R_T3 + R_T2 (`Ctrl+Enter` + Space on BASE) for `SYS`; combo positions 57/58 remain exactly as supplied by the owner. Unlock is L_C1R2 and the mouse toggle is R_C1R2.
+- The left pad scales X/Y by 1/8 before mapping to scroll, then maps click to right-click. This processor order follows the owner's export, replacing scroll-before-scale.
+- Symbol bindings use explicit shifted keycodes matching the editor export; Control and Equal use canonical `LCTRL` and `EQUAL` names.
 
 ### Different or unsupported
 
@@ -77,7 +78,7 @@ The BASE layer additionally maps L_C5R1 through L_C1R1 to `1`–`5`, R_C1R1 thro
 
 ### Unverified on hardware
 
-- T2/T3 comfort and reach, left T1 middle-click, right T1 `Ctrl+Enter`, and the new number-row keys.
+- The revised thumbs (including left T3 middle-click and right T3 `Ctrl+Enter`) and number-row keys in compiled firmware.
 - All layer-taps, mod-taps, sticky modifiers, and six combos under real typing.
 - Studio unlock, USB/BLE Studio connections, a saved live edit, and restore behavior.
 - Both Cirque trackpads, their layer-specific modes, split reconnect, reboot persistence, and firmware flashing.
