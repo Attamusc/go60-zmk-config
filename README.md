@@ -57,6 +57,10 @@ For a preview in the MoErgo Go60 Layout Editor, run `python3 scripts/export-layo
 - [Studio experiment, restore, and recovery procedure](docs/studio.md)
 - [Staged build evidence and artifact hashes](docs/build-evidence.md)
 
+## Battery reporting
+
+`config/go60_lh.conf` enables peripheral battery proxying. The pinned Go60 board defaults already enable fetching the right half's battery; the left half exposes it through an additional BLE Battery Service for applications that read both levels. Host Bluetooth menus may still show only the left battery. This setting applies to repository-built firmware, not the Layout Editor JSON preview. Application readings remain unverified until tested with the compiled firmware.
+
 ## Flashing
 
 Do not flash either half or reset Bluetooth settings without the keyboard owner's approval. When approved, follow [the recovery-flashing procedure](docs/studio.md#recovery-flashing).
