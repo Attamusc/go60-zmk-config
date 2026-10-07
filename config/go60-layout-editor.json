@@ -3,10 +3,10 @@
   "keyboard": "go60",
   "firmware_api_version": "1",
   "locale": "en-US",
-  "uuid": "7a8bd4cf-5a8e-54ac-b96f-9710ccf87ac5",
+  "uuid": "4b4318e6-4c51-517f-b33a-50b630f44e27",
   "parent_uuid": "",
   "unlisted": true,
-  "date": 1791144981,
+  "date": 1791416168,
   "creator": "attamusc",
   "title": "Go60 Toucan port (preview)",
   "notes": "Preview of config/go60.keymap. Git remains the firmware source of truth; do not build or flash this editor export without comparing its generated keymap against the repository.",
@@ -2007,12 +2007,7 @@
         ]
       },
       {
-        "value": "Custom",
-        "params": [
-          {
-            "value": "&studio_unlock"
-          }
-        ]
+        "value": "&none"
       },
       {
         "value": "&tog",

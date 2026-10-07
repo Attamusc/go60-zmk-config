@@ -202,7 +202,7 @@
             display-name = "SYS";
             bindings = <
                 &none  &none  &none  &none  &none  &none    &none  &none  &none  &none  &none  &none
-                &none  &bootloader  &out OUT_USB  &out OUT_BLE  &bt BT_CLR  &studio_unlock    &tog MOUSE  &trans  &trans  &trans  &bootloader  &none
+                &none  &bootloader  &out OUT_USB  &out OUT_BLE  &bt BT_CLR  &none    &tog MOUSE  &trans  &trans  &trans  &bootloader  &none
                 &none  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &trans  &trans  &trans  &trans  &trans  &none
                 &none  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &none
                 &none  &none  &none    &none  &none  &none

@@ -27,11 +27,9 @@ class LayoutEditorExportTests(unittest.TestCase):
         self.assertNotIn('"LCTL"', json.dumps(layers))
         self.assertNotIn('"EQL"', json.dumps(layers))
 
-    def test_studio_unlock_uses_editor_custom_binding(self):
-        self.assertEqual(
-            self.layout["layers"][6][17],
-            {"value": "Custom", "params": [{"value": "&studio_unlock"}]},
-        )
+    def test_sys_position_17_has_no_studio_binding(self):
+        self.assertEqual(self.layout["layers"][6][17], {"value": "&none"})
+        self.assertNotIn("studio", json.dumps(self.layout).lower())
 
     def test_owner_thumb_layout_on_every_layer(self):
         base = [

@@ -66,7 +66,7 @@ The BASE layer additionally maps L_C5R1 through L_C1R1 to `1`–`5`, R_C1R1 thro
 
 - Each layer has 60 bindings; 14 positions remain disabled on every layer. BASE adds ten number-row keys and right T3. MOUSE passes those bindings through and assigns L_T3 to middle-click.
 - The owner's revised thumb mapping moves GUI/F12 and Shift to left T1/T2, and Space/UTIL and Tab/Control to right T2/T1. Mouse clicks are right/left/middle on left T1/T2/T3.
-- `SYS` adds `OUT_USB`, `OUT_BLE`, `&studio_unlock`, and a manual `&tog MOUSE` fallback. Hold R_T3 + R_T2 (`Ctrl+Enter` + Space on BASE) for `SYS`; combo positions 57/58 remain exactly as supplied by the owner. Unlock is L_C1R2 and the mouse toggle is R_C1R2.
+- `SYS` adds `OUT_USB`, `OUT_BLE`, and a manual `&tog MOUSE` fallback. Hold R_T3 + R_T2 (`Ctrl+Enter` + Space on BASE) for `SYS`; combo positions 57/58 remain exactly as supplied by the owner. The mouse toggle is R_C1R2.
 - The left pad scales X/Y by 1/8 before mapping to scroll, then maps click to right-click. This processor order follows the owner's export, replacing scroll-before-scale.
 - Symbol bindings use explicit shifted keycodes matching the editor export; Control and Equal use canonical `LCTRL` and `EQUAL` names.
 
@@ -80,5 +80,4 @@ The BASE layer additionally maps L_C5R1 through L_C1R1 to `1`–`5`, R_C1R1 thro
 
 - The revised thumbs (including left T3 middle-click and right T3 `Ctrl+Enter`) and number-row keys in compiled firmware.
 - All layer-taps, mod-taps, sticky modifiers, and six combos under real typing.
-- Studio unlock, USB/BLE Studio connections, a saved live edit, and restore behavior.
 - Both Cirque trackpads, their layer-specific modes, split reconnect, reboot persistence, and firmware flashing.

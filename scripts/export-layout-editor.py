@@ -62,8 +62,6 @@ def binding(expression):
     elif expression == "_1PASS":
         expression = "&kp LG(LS(SPACE))"
     name, _, arguments = expression.partition(" ")
-    if name == "&studio_unlock":
-        return {"value": "Custom", "params": [{"value": "&studio_unlock"}]}
     params = []
     for item in arguments.split():
         if item in LAYER_IDS:
